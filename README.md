@@ -1,112 +1,233 @@
-# 🚀 TaskControl – Sistema de Gestão de Tarefas
+# 🚀 TaskControl – Sistema Fullstack de Gestão de Tarefas
 
 ## 📌 Sobre o Projeto
 
-O **TaskControl** é um sistema desenvolvido com o objetivo de facilitar o gerenciamento de tarefas, tanto para uso individual quanto em equipes. A aplicação permite organizar atividades, definir prioridades e acompanhar o progresso de forma estruturada.
+O **TaskControl** é um sistema fullstack de gerenciamento de tarefas desenvolvido com foco em organização, produtividade e evolução técnica.
 
-Este projeto foi inicialmente desenvolvido utilizando armazenamento em **JSON**, com foco em aprendizado e validação da lógica de negócio, e está em constante evolução para uma arquitetura mais robusta e escalável.
+A aplicação permite criar, listar, concluir e remover tarefas através de uma interface web moderna integrada a uma API REST construída em Python.
+
+O projeto começou utilizando persistência em JSON para fins de aprendizado e posteriormente evoluiu para uma arquitetura mais profissional utilizando:
+
+- API REST com Flask
+- Banco de dados MySQL
+- Front-end integrado com JavaScript
+- Comunicação via HTTP
+- Organização em camadas
 
 ---
 
 ## 🎯 Objetivo
 
-Criar uma solução eficiente para controle de tarefas que:
+Desenvolver uma aplicação prática para gerenciamento de tarefas aplicando conceitos reais de desenvolvimento backend e frontend, incluindo:
 
-* Reduza a desorganização no acompanhamento de atividades
-* Permita controle de prioridades e status
-* Seja simples de utilizar e evolutiva tecnicamente
-
----
-
-## ⚙️ Funcionalidades atuais
-
-* Cadastro de tarefas
-* Definição de título, descrição e prioridade
-* Associação de tarefas a usuários
-* Listagem de tarefas
-* Persistência de dados em arquivo JSON
+- Arquitetura organizada
+- Consumo de APIs
+- Persistência em banco de dados
+- Integração Fullstack
+- Estrutura escalável
 
 ---
 
-## 🧱 Estrutura do Projeto
+# 🖥️ Preview da Interface
+
+> Interface moderna desenvolvida para proporcionar uma experiência limpa e intuitiva.
+
+- Cadastro de tarefas
+- Filtros por status
+- Conclusão de tarefas
+- Remoção de tarefas
+- Atualização dinâmica da interface
+
+---
+
+# ⚙️ Funcionalidades
+
+## ✅ Backend
+
+- API REST com Flask
+- Integração com MySQL
+- CRUD de tarefas
+- Rotas HTTP
+- Persistência de dados
+- Organização em camadas
+
+## ✅ Frontend
+
+- Interface moderna responsiva
+- Integração com API via Fetch API
+- Renderização dinâmica de tarefas
+- Filtros por status
+- Atualização em tempo real
+
+---
+
+# 🌐 Rotas da API
+
+| Método | Rota | Função |
+|---|---|---|
+| GET | `/tarefas` | Listar tarefas |
+| POST | `/tarefas` | Criar tarefa |
+| PUT | `/tarefas/<id>` | Concluir tarefa |
+| DELETE | `/tarefas/<id>` | Remover tarefa |
+
+---
+
+# 🧱 Estrutura do Projeto
 
 ```bash
-taskcontrol/
+TaskControl/
 │
-├── models/        # Estruturas de dados (ex: Tarefa)
-├── database/      # Manipulação do arquivo JSON
-├── services/      # Regras de negócio
-├── main.py        # Execução principal
+├── app.py                 # API Flask
+├── main.py                # Execução local
+├── .gitignore
+│
+├── database/
+│   └── connection.py      # Conexão MySQL
+│
+├── models/
+│   └── tarefa.py          # Modelo da tarefa
+│
+├── services/
+│   └── sistema.py         # Regras de negócio
+│
+├── interface/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
 ```
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+# 🛠️ Tecnologias Utilizadas
 
-* Python
-* JSON (armazenamento de dados)
-* Programação orientada a objetos
+## Backend
+- Python
+- Flask
+- MySQL
+- MySQL Connector
 
----
+## Frontend
+- HTML5
+- CSS3
+- JavaScript
 
-## 🔄 Status do Projeto
-
-🚧 Em desenvolvimento (evolução contínua)
-
-O sistema está passando por melhorias estruturais para se aproximar de um ambiente profissional. As próximas etapas incluem:
-
-* Migração de JSON para banco de dados (MySQL)
-* Implementação de API (Flask ou FastAPI)
-* Sistema de autenticação de usuários
-* Interface web
-* Deploy em ambiente cloud
-
----
-
-## 🚀 Roadmap (Próximas melhorias)
-
-* [ ] Integração com banco de dados relacional
-* [ ] CRUD completo via API
-* [ ] Sistema de login e autenticação
-* [ ] Interface web (frontend)
-* [ ] Deploy online
+## Ferramentas
+- Git
+- GitHub
+- Postman
+- VS Code
+- PyCharm
 
 ---
 
-## ▶️ Como executar o projeto
+# 🔄 Como Executar o Projeto
 
-1. Clone o repositório:
+## 1️⃣ Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/taskcontrol.git
-```
-
-2. Acesse a pasta:
-
-```bash
-cd taskcontrol
-```
-
-3. Execute o projeto:
-
-```bash
-python main.py
+git clone https://github.com/c2rnan/TaskControl.git
 ```
 
 ---
 
-## 📈 Evolução do Projeto
+## 2️⃣ Acesse a pasta do projeto
 
-Este projeto faz parte do meu processo de desenvolvimento como programador, sendo constantemente atualizado com novas práticas, melhorias de arquitetura e tecnologias mais robustas.
+```bash
+cd TaskControl
+```
 
 ---
 
-## 👨‍💻 Autor
+## 3️⃣ Instale as dependências
+
+```bash
+pip install flask
+pip install mysql-connector-python
+pip install python-dotenv
+```
+
+---
+
+## 4️⃣ Configure o arquivo `.env`
+
+Crie um arquivo `.env` na raiz:
+
+```env
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=
+DB_NAME=taskcontrol
+```
+
+---
+
+## 5️⃣ Execute a API
+
+```bash
+python app.py
+```
+
+---
+
+## 6️⃣ Abra o Frontend
+
+Abra:
+
+```bash
+interface/index.html
+```
+
+---
+
+# 🧪 Testes da API
+
+A API pode ser testada utilizando:
+
+- Postman
+- Insomnia
+- Navegador (rotas GET)
+
+---
+
+# 🚀 Roadmap (Próximas melhorias)
+
+- [ ] Editar tarefas
+- [ ] Sistema de categorias/tags
+- [ ] Busca por título
+- [ ] Data de vencimento
+- [ ] Tarefas vencidas destacadas
+- [ ] Autenticação de usuários
+- [ ] Deploy da API
+- [ ] Deploy do frontend
+- [ ] Dockerização
+- [ ] Responsividade avançada
+
+---
+
+# 📈 Evolução do Projeto
+
+O TaskControl foi desenvolvido como parte do meu processo de evolução prática em desenvolvimento de software, aplicando conceitos reais de:
+
+- Backend
+- APIs REST
+- Banco de dados
+- Frontend
+- Integração Fullstack
+- Versionamento com Git
+
+O projeto continua em constante evolução com novas funcionalidades e melhorias estruturais.
+
+---
+
+# 👨‍💻 Autor
 
 Desenvolvido por **Caio Renan**
 
+- GitHub: https://github.com/c2rnan
+
 ---
 
-## 📌 Observação
+# 📌 Observação
 
-Este projeto está em evolução e pode sofrer alterações frequentes na estrutura e funcionalidades.
+Este projeto está em desenvolvimento contínuo e pode sofrer alterações frequentes na arquitetura, interface e funcionalidades.
