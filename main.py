@@ -1,19 +1,17 @@
 from services.sistema import *
 
 def menu():
-    CarregarDados()
-
     while True:
         print("""
-        ===================
-           TASK CONTROL    
-        ===================
-        1 - Criar Tarefas
-        2 - Listar Tarefas
-        3 - Concluir Tarefas
-        4 - Deletar Tarefas
-        0 - Sair
-        """)
+===================
+   TASK CONTROL    
+===================
+1 - Criar Tarefas
+2 - Listar Tarefas
+3 - Concluir Tarefas
+4 - Deletar Tarefas
+0 - Sair
+""")
 
         opcao = input("Escolha:")
 
@@ -24,6 +22,7 @@ def menu():
             usuario = input("Usuário: ")
 
             CriarTarefa(titulo, descricao, prioridade, usuario)
+
         elif opcao == "2":
             ListarTarefa()
         elif opcao == "3":

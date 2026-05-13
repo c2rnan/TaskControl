@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskControl</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="noise"></div>
+
+    <header class="header">
+        <div class="logo-block">
+            <span class="logo-icon">⬡</span>
+            <h1 class="title">Task<span>Control</span></h1>
+        </div>
+        <div class="header-meta">
+            <span id="task-count" class="task-count">carregando...</span>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <section class="form-section">
+            <p class="form-label">NOVA TAREFA</p>
+            <div class="form">
+                <div class="input-group">
+                    <label>Título *</label>
+                    <input id="titulo" placeholder="Ex: Revisar relatório mensal" autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label>Descrição</label>
+                    <input id="descricao" placeholder="Detalhes da tarefa..." autocomplete="off">
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Prioridade</label>
+                        <select id="prioridade">
+                            <option value="">— Selecionar —</option>
+                            <option value="alta">🔴 Alta</option>
+                            <option value="media">🟡 Média</option>
+                            <option value="baixa">🟢 Baixa</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Usuário</label>
+                        <input id="usuario" placeholder="Responsável" autocomplete="off">
+                    </div>
+                </div>
+                <button class="btn-criar" onclick="criarTarefa()">
+                    <span class="btn-icon">+</span>
+                    <span>Criar Tarefa</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="list-section">
+            <div class="list-header">
+                <p class="form-label">TAREFAS</p>
+                <div class="filters">
+                    <button class="filter-btn active" onclick="filtrar('todas', this)">Todas</button>
+                    <button class="filter-btn" onclick="filtrar('pendente', this)">Pendentes</button>
+                    <button class="filter-btn" onclick="filtrar('concluida', this)">Concluídas</button>
+                </div>
+            </div>
+            <ul id="lista" class="lista"></ul>
+            <div id="empty-state" class="empty-state" style="display:none">
+                <span class="empty-icon">◫</span>
+                <p>Nenhuma tarefa encontrada.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

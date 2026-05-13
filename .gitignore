@@ -1,0 +1,19 @@
+# Ambiente virtual
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Variáveis ambiente
+.env
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Sistema
+.DS_Store
+Thumbs.db
